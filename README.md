@@ -3,6 +3,4 @@
 [![codecov](https://codecov.io/gh/ilmari666/ohtu-2019-viikko1/branch/master/graph/badge.svg)](https://codecov.io/gh/ilmari666/ohtu-2019-viikko1)
 
 
-# ohtu-2019-viikko1
-ohtu viikko 1
-
+[Tehtävät 14-](https://github.com/ilmari666/ohtu-tehtavat)
