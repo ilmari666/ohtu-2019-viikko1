@@ -1,13 +1,15 @@
 package ohtu.ohtuvarasto;
 
-public class Varasto {
+public class Varasto
+{
 
     // --- piilotettu tietorakenteen toteutus: ---
     private double tilavuus;  // paljonko varastoon mahtuu,  > 0
     private double saldo;     // paljonko varastossa on nyt, >= 0
 
     // --- konstruktorit: ---
-    public Varasto(double tilavuus) {  // tilavuus on annettava
+    public Varasto(double tilavuus)
+    {  // tilavuus on annettava
         if (tilavuus > 0.0) {
             this.tilavuus = tilavuus;
         } else // virheellinen, nollataan
@@ -17,38 +19,32 @@ public class Varasto {
         saldo = 0;     // oletus: varasto on tyhjä
     }
 
-    public Varasto(double tilavuus, double alkuSaldo) { // kuormitetaan
-        if (tilavuus > 0.0) {
-            this.tilavuus = tilavuus;
-        } else // virheellinen, nollataan
-        {
-            this.tilavuus = 0.0;  // => käyttökelvoton varasto
-        }
-        if (alkuSaldo < 0.0) {
-            this.saldo = 0.0;
-        } else if (alkuSaldo <= this.tilavuus) // mahtuu
-        {
-            this.saldo = alkuSaldo;
-        } else {
-            this.saldo = this.tilavuus;  // täyteen ja ylimäärä hukkaan!
-        }
+    public Varasto(double tilavuus, double alkuSaldo)
+    { // kuormitetaan
+        this.tilavuus = Math.max(tilavuus, 0.0);
+        double talletus = Math.max(alkuSaldo, 0.0);
+        this.saldo = Math.min(talletus,tilavuus);
     }
 
     // --- ottavat aksessorit eli getterit: ---
-    public double getSaldo() {
+    public double getSaldo()
+    {
         return saldo;
     }
 
-    public double getTilavuus() {
+    public double getTilavuus()
+    {
         return tilavuus;
     }
 
-    public double paljonkoMahtuu() {  // huom: ominaisuus voidaan myös laskea
+    public double paljonkoMahtuu()
+    {  // huom: ominaisuus voidaan myös laskea
         return tilavuus - saldo;        //  ei tarvita erillistä kenttää vielaTilaa tms.
     }
 
     // --- asettavat aksessorit eli setterit: ---
-    public void lisaaVarastoon(double maara) {
+    public void lisaaVarastoon(double maara)
+    {
         if (maara < 0) // virhetilanteessa voidaan tehdä 
         {
             return;       // tällainen pikapoistuminenkin!
@@ -61,7 +57,8 @@ public class Varasto {
         }
     }
 
-    public double otaVarastosta(double maara) {
+    public double otaVarastosta(double maara)
+    {
         if (maara < 0) // virhetilanteessa voidaan tehdä 
         {
             return 0.0;   // tällainen pikapoistuminenkin!
