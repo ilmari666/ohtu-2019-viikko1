@@ -7,6 +7,33 @@ public class Main
 
     public static void main(String[] args)
     {
+        /*
+
+
+
+
+
+
+
+
+
+
+        break checkstyles at codeclimate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        */
 
     }
 }
