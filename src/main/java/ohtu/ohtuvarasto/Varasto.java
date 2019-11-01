@@ -16,14 +16,14 @@ public class Varasto
         {
             this.tilavuus = 0.0;  // => käyttökelvoton varasto
         }
-        saldo = 0;     // oletus: varasto on tyhjä
+        saldo = 0.0;     // oletus: varasto on tyhjä
     }
 
-    public Varasto(double tilavuus, double alkuSaldo)
+    public Varasto(double kapasiteetti, double alkuSaldo)
     { // kuormitetaan
-        this.tilavuus = Math.max(tilavuus, 0.0);
+        tilavuus = Math.max(kapasiteetti, 0.0);
         double talletus = Math.max(alkuSaldo, 0.0);
-        this.saldo = Math.min(talletus,tilavuus);
+        saldo = Math.min(talletus,tilavuus);
     }
 
     // --- ottavat aksessorit eli getterit: ---
