@@ -7,34 +7,5 @@ public class Main
 
     public static void main(String[] args)
     {
-        boolean laa = true;
-        /*
-
-
-
-
-
-
-
-
-
-
-        break checkstyles at codeclimate
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        */
-
     }
 }
